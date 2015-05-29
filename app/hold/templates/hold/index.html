@@ -1,0 +1,60 @@
+{% extends "bbase.html" %}
+
+{% block title %} 基金 {% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>基金代码</th>
+						<th>基金名称</th>
+						<th>持股集中度</th>
+						<th>持有金额</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for fund in funds %}
+					<tr>
+						<td><a href="http://www.howbuy.com/fund/{{fund.code}}/" target="_blank">{{fund.code}}</a></td>
+						<td>{{fund.name}}</td>
+						<td>{{fund.rate}}%</td>
+						<td>{{fund.amount}}</td>
+						<td><a href="{% url 'detail' fund.id %}" class="btn btn-primary btn-xs" role="button">重仓持股</a></td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>股票名称</th>
+						<th>股票代码</th>
+						<th>持有金额</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for se in stocker %}
+					<tr>
+						<td>{{forloop.counter}}</td>
+						{% for s in se %}
+						<td>{{s}}</td>
+						{% endfor %}
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

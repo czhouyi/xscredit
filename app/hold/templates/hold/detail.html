@@ -1,0 +1,45 @@
+{% extends "bbase.html" %}
+
+{% block title %} {{fund.name}} {% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<div class="col-sm-3">
+		<div class="list-group">
+			{% for f in funds %}
+			<a href="{% url 'detail' f.id %}" class="list-group-item {% ifequal f.id fund.id %}active{% endifequal %}">{{f.name}}</a>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="col-sm-5">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">重仓持股({{fund.rate}}%)</h3>
+			</div>
+			<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>股票代码</th>
+						<th>股票名称</th>
+						<th>占比</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for hold in holds %}
+					<tr>
+						<td>{{hold.stock.code}}</td>
+						<td>{{hold.stock.name}}</td>
+						<td>{{hold.rate}}%</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<a href="{% url 'get_hold' fund.id %}" class="btn btn-primary" role="button">获取数据</a></td>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

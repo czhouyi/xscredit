@@ -1,0 +1,40 @@
+{% extends "bbase.html" %}
+
+{% block title %} 注册新用户 {% endblock %}
+
+{% block exthead %}
+<link href="/static/signin.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+	<form class="form-signin" action="{% url 'sign_up' %}" method="post">
+		{% csrf_token %}
+		{% if form.non_field_errors %}
+		<div class="alert alert-danger" role="alert">
+			<a href="#" class="close" data-dismiss="alert">&times;</a> 
+			{% for error in form.non_field_errors %} {{ error | escape }} {% endfor %}
+		</div>
+		{% endif %}
+		<h2 class="form-signin-heading">注册新用户</h2>
+		
+		{{ form.username.errors }}
+		<label for="username" class="sr-only">用户名</label>
+		<input type="text" id="username" name="username" class="form-control" placeholder="创建用户名" required>
+		
+		{{ form.email.errors }}
+		<label for="email" class="sr-only">Email</label>
+		<input type="email" id="email" name="email" class="form-control" placeholder="输入Email" required>
+		
+		{{ form.password.errors }}
+		<label for="password" class="sr-only">密码</label>
+		<input type="password" id="password" name="password" class="form-control" placeholder="创建密码" required>
+		
+		<br />
+		
+		<button class="btn btn-lg btn-primary btn-block" type="submit">确定</button>
+	</form>
+
+</div>
+{% endblock %}
