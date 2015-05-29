@@ -57,7 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-		os.path.join(BASE_DIR, "templates"),
+			os.path.join(BASE_DIR, "templates"),
 	    ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -80,8 +80,8 @@ WSGI_APPLICATION = 'xscredit.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'portal',
-	'USER': 'portal',
+        'NAME': 'xscredit',
+		'USER': 'ycz',
         'PASSWORD': '1234',
         'HOST': 'localhost',
     }
