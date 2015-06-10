@@ -7,51 +7,37 @@
 	<meta name="description" content="chinadaas">
 	<meta name="author" content="yichuanzhou">
 	<link rel="icon" href="/static/favicon.ico">
-    <title>{% block title %}{% endblock %}- Project Name</title>
-    
-    <!-- Bootstrap core CSS -->
-    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/carousel.css" rel="stylesheet">
+	<title>{% block title %}{% endblock %}- Project Name</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/navbar-static-top.css" rel="stylesheet">
     
 	{% block css %} {% endblock %}
 </head>
 
 <body>
-	<div class="navbar-wrapper">
+	<nav class="navbar navbar-default navbar-static-top">
 		<div class="container">
-			<nav class="navbar navbar-inverse navbar-static-top">
-				<div class="container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="/">Project Name</a>
-					</div>
-					<div id="navbar" class="navbar-collapse collapse">
-						<ul class="nav navbar-nav">
-							<li id="site_nav_index"><a href="{% url 'index' %}">Home</a></li>
-							<li id="site_nav_hold"><a href="{% url 'index' %}">Product</a></li>
-							<li id="site_nav_hold"><a href="{% url 'index' %}">Price</a></li>
-							<li id="site_nav_about"><a href="{% url 'about' %}">About</a></li>
-						</ul>
-						<!--
-						<ul class="nav navbar-nav navbar-right">
-							{% if user.username %}
-							<li><a href="{% url 'app.account.views.profile' %}">{{user.username}}</a></li>
-							<li><a href="{% url 'app.account.views.sign_out' %}">退出</a></li>
-							{% else %}
-							<li><a href="{% url 'app.account.views.sign_up' %}">注册</a></li>
-							<li><a href="{% url 'app.account.views.sign_in' %}">登陆</a></li>
-							{% endif %}
-						</ul>-->
-					</div>
-				</div>
-			</nav>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Project Name</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li id="site_nav_index"><a href="{% url 'index' %}">Home</a></li>
+					<li id="site_nav_hold"><a href="{% url 'index' %}">Product</a></li>
+					<li id="site_nav_hold"><a href="{% url 'index' %}">Price</a></li>
+					<li id="site_nav_about"><a href="{% url 'about' %}">About</a></li>
+				</ul>
+			</div>
 		</div>
-	</div>
+	</nav>
 	
     {% block content %} {% endblock %}
 
