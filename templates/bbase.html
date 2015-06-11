@@ -12,6 +12,7 @@
 	<!-- Bootstrap core CSS -->
 	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/static/css/navbar-static-top.css" rel="stylesheet">
+	<link href="/static/css/footer.css" rel="stylesheet">
     
 	{% block css %} {% endblock %}
 </head>
@@ -40,6 +41,48 @@
 	</nav>
 	
     {% block content %} {% endblock %}
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row">
+						<nav class="col-sm-3 footer-menu">
+							<h2><a href="#">Products</a></h2>
+							<ul>
+								<li><a href="#" title="Product 1">Product 1</a></li>
+								<li><a href="#" title="Product 2">Product 2</a></li>
+								<li><a href="#" title="Product 3">Product 3</a></li>
+							</ul>
+						</nav>
+						<nav class="col-sm-3 footer-menu">
+							<h2><a href="#">About</a></h2>
+							<ul>
+								<li><a href="#" title="About Us">About Us</a></li>
+								<li><a href="#" title="Privacy">Privacy</a></li>
+								<li><a href="#" title="Terms">Terms</a></li>
+							</ul>
+						</nav>
+						<nav class="col-sm-3 footer-menu">
+							<h2><a href="#">Community</a></h2>
+							<ul>
+								<li><a href="#" title="Blog">Blog</a></li>
+								<li><a href="#" title="Weibo">Weibo</a></li>
+								<li><a href="#" title="Contact Us">Contact Us</a></li>
+							</ul>
+						</nav>
+
+					</div>
+					<div id="footer-copyright" class="row">
+						<div class="col-sm-12 sub-footer">
+							<p class="pull-right"><a href="#">Back to top</a></p>
+							<p>&copy; 2014 Company, Inc. </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
